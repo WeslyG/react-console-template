@@ -1,0 +1,53 @@
+{
+  "name": "zapuskator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "dist/app.js",
+  "scripts": {
+    "prebinary": "yarn build",
+    "binary": "pkg .",
+    "prestart": "yarn build",
+    "start": "node dist/app.js",
+    "dev": "node dist/app.js",
+    "watch": "babel --watch src --out-dir ./dist --copy-files",
+    "prebuild": "rimraf dist",
+    "build": "babel src --out-dir ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-transform-runtime": "^7.19.1",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "blessed": "^0.1.81",
+    "pkg": "^5.8.0",
+    "react": "^18.2.0",
+    "react-blessed": "^0.7.2",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/blessed": "^0.1.19",
+    "@types/react": "^18.0.21",
+    "@types/react-blessed": "^0.7.2"
+  },
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "targets": [
+      "node16-win-x64",
+      "node16-linux-x64"
+    ],
+    "outputPath": ".bin",
+    "assets": "node_modules/blessed/**/*"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "volta": {
+    "node": "16.17.1",
+    "yarn": "1.22.19"
+  }
+}
