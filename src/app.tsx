@@ -32,4 +32,4 @@ screen.key(['escape', 'q', 'C-c'], function(ch, key) {
 });
 
 // Rendering the React app using our screen
-render(<App />, screen);
+render(<AnimatedBox />, screen);
